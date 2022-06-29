@@ -29,6 +29,7 @@ https://dev.to/lparvinsmith/signatures-as-authentication-in-web3-3kod
 ### References
 https://ipfs.io/
 # Homework
+* Create Github Issues with your questions about this lesson
 * Finish the integration
 * Study about [IPFS](https://docs.ipfs.io/)
 * (Optional) Implement more features to integrate frontend and backend from previous classes
