@@ -1,13 +1,7 @@
 # Sample Hardhat Project
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+NFT collection called "CryptoLasagna" deployed at 0x07B243308bd5039aBF9A49C713CC8F631bC25440 on rinkeby 
 
-Try running some of the following tasks:
+It was deployed thanks to `scripts/deploy.ts`
 
-```shell
-npx hardhat help
-npx hardhat test
-GAS_REPORT=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.ts
-```
+Now we need to create an API in the backend folder and mint some NFT and add the URI for each minted NFT
