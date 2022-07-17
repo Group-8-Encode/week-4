@@ -6,11 +6,9 @@ const Navbar = () => (
         <Link href="/">
             <span className="font-bold text-3xl cursor-pointer select-none">Lasagna NFT</span>
         </Link>
-        <div className='text-white text-2xl md:hidden'>
-            <GiHamburgerMenu />
-        </div>
+       
 
-        <button className='bg-secondary p-2 rounded-lg hidden md:block'>
+        <button className='bg-secondary p-2 rounded-lg '>
             Connect
         </button>
     </nav>
