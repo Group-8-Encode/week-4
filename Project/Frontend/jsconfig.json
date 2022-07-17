@@ -1,0 +1,15 @@
+// tsconfig.json or jsconfig.json
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "@Components/*": ["./src/components/*"],
+        "@Localized/*": ["./src/localization/*"],
+        "@Pages/*": ["./src/pages/*"],
+        "@Recoil/*": ["./src/recoil/*"],
+        "@API/*": ["./src/api/*"],
+        "@Const/*": ["./src/const/*"],
+        "@Utils/*": ["./src/utils/*"],
+      }
+    }
+  }
