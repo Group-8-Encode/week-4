@@ -4,6 +4,8 @@ import type { AppProps } from 'next/app'
 import { QueryClientProvider, QueryClient } from "react-query"
 import { ReactQueryDevtools } from "react-query-devtools"
 
+import Footer from '@Components/Footer'
+import Navbar from '@Components/Navbar'
 
 function MyApp({ Component, pageProps }: AppProps) {
 
@@ -11,7 +13,12 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return <QueryClientProvider client={queryClient} >
     <ReactQueryDevtools />
-    <Component {...pageProps} /></QueryClientProvider>
+    <Navbar />
+    <Component {...pageProps} />
+    <Footer />
+  </QueryClientProvider>
+
+
 }
 
 export default MyApp
