@@ -1,6 +1,6 @@
 # Sample Hardhat Project
 
-NFT collection called "CryptoLasagna" deployed at 0x07B243308bd5039aBF9A49C713CC8F631bC25440 on rinkeby 
+NFT collection called "CryptoLasagna" deployed at 0x633dc5804c292C9404B9c6c45ba73f3dFAe5fa26 on rinkeby 
 
 It was deployed thanks to `scripts/deploy.ts`
 

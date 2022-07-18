@@ -7,6 +7,8 @@ import { BlockModule } from './block/block.module';
 import { AccountModule } from './account/account.module';
 import { WalletModule } from './wallet/wallet.module';
 import { ContractModule } from './contract/contract.module';
+import { NftCollectionModule } from './nft-collection/nft-collection.module';
+import { IpfsModule } from './ipfs/ipfs.module';
 
 @Module({
   imports: [
@@ -16,6 +18,8 @@ import { ContractModule } from './contract/contract.module';
     AccountModule,
     WalletModule,
     ContractModule,
+    NftCollectionModule,
+    IpfsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
