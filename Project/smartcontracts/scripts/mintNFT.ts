@@ -18,9 +18,8 @@ async function main() {
   const signer = wallet.connect(provider);
   console.log(`Signer address is : ${signer.address}`);
 
-  const nftCollectionAddress = "0x07B243308bd5039aBF9A49C713CC8F631bC25440"; // process.argv[2];
+  const nftCollectionAddress = "0x633dc5804c292C9404B9c6c45ba73f3dFAe5fa26"; // process.argv[2];
   const mintToAddress = process.argv[2];
-  const nftIndex = process.argv[3];
   console.log(`Contract address is : ${nftCollectionAddress}`);
 
   const nftCollectionContract: NFTcollection = new Contract(
@@ -29,7 +28,7 @@ async function main() {
     signer
   ) as NFTcollection;
 
-  const tx = await nftCollectionContract.safeMint(mintToAddress, nftIndex,{value: ethers.utils.parseEther("0.0000001")});
+  const tx = await nftCollectionContract.safeMint(mintToAddress,{value: ethers.utils.parseEther("0.0000001")});
   console.log("Awaiting confirmations");
   await tx.wait();
   console.log(`Mint operation completed. Hash: ${tx.hash}`);

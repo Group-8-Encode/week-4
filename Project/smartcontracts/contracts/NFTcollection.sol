@@ -9,6 +9,7 @@ contract NFTcollection is ERC721, AccessControl, ERC721Burnable {
 
 
     uint256 public cost = 0.0000001 ether;
+    uint256 public tokenId = 0;
 
     //mapping for token URIs
     mapping (uint256 => string) private _tokenURIs;
@@ -18,23 +19,24 @@ contract NFTcollection is ERC721, AccessControl, ERC721Burnable {
     }
 
 
-    function safeMint(address to, uint256 tokenId) public payable {
+    function safeMint(address to) public payable {
         require(msg.value >= cost);
+        tokenId = tokenId+1;
         _safeMint(to, tokenId);
     }
 
 
     //inspired by https://forum.openzeppelin.com/t/function-settokenuri-in-erc721-is-gone-with-pragma-0-8-0/5978/3
-    function setTokenURI(uint256 tokenId, string memory _tokenURI) public {
+    function setTokenURI(uint256 _tokenId, string memory _tokenURI) public {
         //TODO allow only DEFAULT_ADMIN_ROLE to do that
-        require(_exists(tokenId), "ERC721Metadata: URI set of nonexistent token");
-        _tokenURIs[tokenId] = _tokenURI;
+        require(_exists(_tokenId), "ERC721Metadata: URI set of nonexistent token");
+        _tokenURIs[_tokenId] = _tokenURI;
     }
     
     
-    function tokenURI(uint256 tokenId) public view virtual override returns (string memory) {
-        require(_exists(tokenId), "ERC721Metadata: URI query for nonexistent token");
-        string memory _tokenURI = _tokenURIs[tokenId];
+    function tokenURI(uint256 _tokenId) public view virtual override returns (string memory) {
+        require(_exists(_tokenId), "ERC721Metadata: URI query for nonexistent token");
+        string memory _tokenURI = _tokenURIs[_tokenId];
         return _tokenURI;
     }
 
