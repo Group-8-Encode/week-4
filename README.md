@@ -1,35 +1,18 @@
-# Lesson 15 - Integration
-## Coupling frontend and APIs
-* On-chain and off-chain features
-* Keeping user Private Key private
-* Authentication methods
-* Using signatures as a form of authentication
-* Mapping interactions, resources and payloads
-* Handling errors
-### References
-https://en.wikipedia.org/wiki/Loose_coupling
-## Auth methods for the Web3.0
-* Consuming services from API
-* Authentication and authorization
-* Elliptic encryption
-* Signing messages
-* Message signature in body
-* Verifying signatures
-### References
-https://en.wikipedia.org/wiki/Authentication_protocol
+# Week 4 - Weekend project : CryptoLasagna
+## Smartcontract
 
-https://dev.to/lparvinsmith/signatures-as-authentication-in-web3-3kod
-## File storage for the Web3.0
-* Files on the server
-* Scalable centralized solutions
-* Databases vs File servers
-* Decentralized file storage principles
-* Introducing IPFS
-* IPFS as a File Server
-### References
-https://ipfs.io/
-# Homework
-* Create Github Issues with your questions about this lesson
-* Finish the integration
-* Study about [IPFS](https://docs.ipfs.io/)
-* (Optional) Implement more features to integrate frontend and backend from previous classes
+The smart contract is on rinkeby.
+
+The NFT smartcontract is available at this address : [0x633dc5804c292C9404B9c6c45ba73f3dFAe5fa26](https://rinkeby.etherscan.io/address/0x633dc5804c292C9404B9c6c45ba73f3dFAe5fa26)
+
+The API can call :
+* the safeMint() function in order to mint an NFT
+* the setTokenURI() function in order to linked an URI to a specific NFT
+
+## Backend
+
+The safeMInt() function can be called through /nft-collection/mint-NFT
+
+## Frontend
+
+TBD
