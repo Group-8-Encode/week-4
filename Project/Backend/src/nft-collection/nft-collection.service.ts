@@ -42,6 +42,14 @@ export class NftCollectionService {
       return tx.wait();
     }
   
+    async setTokenUri(id: number, uri: string) {
+      const tx = await this.contractSignedInstance.setTokenURI(
+        id,
+        uri,
+      );
+      return tx.wait();
+    }
+  
     checkSignature(address: string, amount: number, signature: string) {
       const signatureObject = {address: address, amount: amount};
       const signatureMessage = JSON.stringify(signatureObject);
