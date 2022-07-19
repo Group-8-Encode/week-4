@@ -2,6 +2,8 @@ import { Body, Controller, Get, HttpException, Param, Post } from '@nestjs/commo
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { NftCollectionService } from './nft-collection.service';
 import { MintNftDto } from './dtos/mint-nft.dto';
+import { SetTokenUriDto } from './dtos/set-token-uri.dto';
+
 
 @Controller('nft-collection')
 @ApiTags('nft-collection')
@@ -84,6 +86,51 @@ export class NftCollectionController {
       const result = await this.nftCollectionService.safeMintNft(
         mintNftDto.address,
         mintNftDto.amount,
+      );
+      return result;
+    } catch (error) {
+      throw new HttpException(error.message, 503);
+    }
+  }
+
+
+  @Post('Set-token-URI')
+
+  @ApiOperation({
+    summary: 'Set token uri',
+    description:
+      'Requests the server to add an URI to the NFT index',
+  })
+  @ApiResponse({
+    status: 200,
+    description: 'uri added',
+    type: Number,
+  })
+  @ApiResponse({
+    status: 401,
+    description: 'Missing signature',
+    type: HttpException,
+  })
+  @ApiResponse({
+    status: 403,
+    description: 'Wrong signature',
+    type: HttpException,
+  })
+  @ApiResponse({
+    status: 500,
+    description: 'Invalid signature',
+    type: HttpException,
+  })
+  @ApiResponse({
+    status: 503,
+    description: 'Server Error',
+    type: HttpException,
+  })
+  async setTokenUri(@Body() setTokenUriDto: SetTokenUriDto) {
+    try {
+      const result = await this.nftCollectionService.setTokenUri(
+        setTokenUriDto.id,
+        setTokenUriDto.uri,
       );
       return result;
     } catch (error) {
